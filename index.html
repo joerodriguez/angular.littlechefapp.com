@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="littlechef">
+  <head>
+    <link href="http://www.littlechefapp.com/assets/application.css" media="all" rel="stylesheet" type="text/css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="/lib/angular-resource.min.js"></script>
+    <script src="/lib/foundation.min.js"></script>
+    <script src="/lib/underscore-min.js"></script>
+
+    <script src="/littlechef.js"></script>
+
+    <script src="/controllers/application.js"></script>
+    <script src="/controllers/menu.js"></script>
+    <script src="/controllers/account.js"></script>
+    <script src="/controllers/shopping_list.js"></script>
+    <script src="/controllers/recipes.js"></script>
+    <script src="/controllers/favorites.js"></script>
+
+    <script src="/models/recipe.js"></script>
+    <script src="/models/favorite.js"></script>
+    <script src="/models/user.js"></script>
+    <script src="/models/shopping_item.js"></script>
+  </head>
+
+  <body ng-controller="ApplicationController">
+
+    <div class="row" ng-controller="MenuController" ng-include src="'views/menu.html'">
+    </div>
+
+    <div class="row">
+      <div class="twelve columns" ng-view>
+      </div>
+    </div>
+
+  </body>
+</html>

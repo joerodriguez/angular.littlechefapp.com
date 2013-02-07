@@ -1,0 +1,30 @@
+app.factory 'Favorite', ($resource, $http, $q) ->
+
+  data = 
+    favorites: []
+    recipes: []
+
+  resource = $resource '/api/bookmarks/:id', {}
+
+  $http.get("/api/bookmarks.json").success (res) ->
+    data.favorites = res.bookmarks
+    data.recipes = res.recipes
+
+  {
+
+    recipes: ->
+      data.recipes
+
+    is: (recipe) ->
+      _.find data.favorites, (f) -> f.recipe_id == recipe.id
+
+    remove: (recipe) ->
+      f = _.find(data.favorites, (f) -> f.recipe_id == recipe.id)
+      data.favorites = _.without data.favorites, f
+      (new resource).$delete(id: f.id)
+
+    add: (recipe) ->
+      f = new resource recipe_id: recipe.id
+      f.$save()
+      data.favorites.push f
+  }
