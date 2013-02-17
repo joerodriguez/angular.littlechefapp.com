@@ -2,10 +2,15 @@
 (function() {
 
   app.factory('ShoppingItem', function($resource) {
-    return $resource('/api/shopping_items/:id', {}, {
+    return $resource('/api/shopping_items/:id', {
+      id: '@id'
+    }, {
       index: {
         method: 'GET',
         isArray: true
+      },
+      update: {
+        method: 'PUT'
       }
     });
   });

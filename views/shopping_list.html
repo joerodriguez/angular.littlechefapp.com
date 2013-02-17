@@ -16,7 +16,7 @@
 
 <ul class="unstyled shopping-items">
   <li ng-repeat="item in items">
-    <input class="shopping-item-checkbox" ng-model="item.checked" id="si-{{item.id}}"  type="checkbox" ng-checked={{item.checked}}>
+    <input class="shopping-item-checkbox" ng-change="item.$update()" ng-model="item.checked" id="si-{{item.id}}"  type="checkbox">
     <label for="si-{{item.id}}">
       {{item.name}}
     </label>
