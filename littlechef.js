@@ -8,9 +8,6 @@
     }).when("/recipes/:recipeId", {
       templateUrl: "views/recipes/detail.html",
       controller: RecipeDetailController
-    }).when("/search/*", {
-      templateUrl: "views/recipes/search.html",
-      controller: SearchController
     }).when("/popular", {
       templateUrl: "views/recipes/popular.html",
       controller: RecipesListController
@@ -20,6 +17,10 @@
     }).when("/favorites", {
       templateUrl: "views/recipes/favorites.html",
       controller: FavoritesController
+    }).when("/search", {
+      templateUrl: "views/recipes/search.html",
+      controller: 'SearchController',
+      reloadOnSearch: false
     }).otherwise({
       redirectTo: "/popular"
     });

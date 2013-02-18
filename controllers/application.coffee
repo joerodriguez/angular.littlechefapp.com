@@ -1,4 +1,4 @@
-window.ApplicationController = ($scope, Favorite) ->
+window.ApplicationController = ($scope, $window, Favorite) ->
   $scope.favorite = (recipe) ->
     Favorite.add recipe
 
@@ -7,3 +7,6 @@ window.ApplicationController = ($scope, Favorite) ->
 
   $scope.isFavorite = (recipe) ->
     Favorite.is recipe
+
+  $scope.search = (q) ->
+    $window.location.hash = "#/search?q=#{q}"

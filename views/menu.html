@@ -37,8 +37,8 @@
             </a>
           </li>
           <li class="search">
-            <form action="/search" class="form-search navbar-search pull-right lc-search" method="get">
-              <input class="search-query" name="q" placeholder="Find Recipes" type="search">
+            <form ng-submit="search(query)" class="form-search navbar-search pull-right lc-search" method="get">
+              <input ng-change="search(query)" class="search-query" ng-model="query" placeholder="Find Recipes" type="search">
             </form>
           </li>
         </ul>

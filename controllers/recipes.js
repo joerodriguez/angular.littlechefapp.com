@@ -15,6 +15,4 @@
     });
   };
 
-  window.SearchController = function($scope) {};
-
 }).call(this);
