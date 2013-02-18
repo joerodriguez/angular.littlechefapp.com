@@ -3,10 +3,11 @@
   <head>
     <link href="http://www.littlechefapp.com/assets/application.css" media="all" rel="stylesheet" type="text/css">
 
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/foundation.min.js"></script>
+    <script src="/lib/underscore.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
     <script src="/lib/angular-resource.min.js"></script>
-    <script src="/lib/foundation.min.js"></script>
-    <script src="/lib/underscore-min.js"></script>
 
     <script src="/littlechef.js"></script>
 
@@ -16,11 +17,15 @@
     <script src="/controllers/shopping_list.js"></script>
     <script src="/controllers/recipes.js"></script>
     <script src="/controllers/favorites.js"></script>
+    <script src="/controllers/add_recipe_to_shopping_list.js"></script>
 
     <script src="/models/recipe.js"></script>
     <script src="/models/favorite.js"></script>
     <script src="/models/user.js"></script>
     <script src="/models/shopping_item.js"></script>
+
+    <script src="/directives/reveal_add_recipe_to_shopping_list.js"></script>
+    <script src="/directives/close_reveal_modal.js"></script>
   </head>
 
   <body ng-controller="ApplicationController">
@@ -31,6 +36,25 @@
     <div class="row">
       <div class="twelve columns" ng-view>
       </div>
+    </div>
+
+    <div ng-controller="AddRecipeToShoppingListController" class="reveal-modal large shopping-list-modal">
+      <a class="close-reveal-modal">×</a>        
+      <h3>Add ingredients to my shopping list</h3>
+      <form ng-submit="submit()" class="shopping-list-form">
+        <div class="modal-body">
+          {{recipe.title}}
+          <ul class="unstyled">
+            <li ng-repeat="item in items">
+              <label>
+                <input ng-model="item.checked" type="checkbox" />
+                {{item.name}}
+              </label>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" class="button" close-reveal-modal>Add to shopping list</button>        
+      </form>
     </div>
 
   </body>

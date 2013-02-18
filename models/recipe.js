@@ -15,7 +15,10 @@
       },
       thumb_url: function() {
         var _ref, _ref1;
-        return ((_ref = this.uploads) != null ? (_ref1 = _ref[0]) != null ? _ref1.thumb_url : void 0 : void 0) || "http://littlechefapp.com/assets/recipe_photo_placeholder.gif";
+        return ((_ref = this.uploads) != null ? (_ref1 = _ref[0]) != null ? _ref1.thumb_url : void 0 : void 0) || "http://www.littlechefapp.com/assets/recipe_photo_placeholder.gif";
+      },
+      ingredients: function() {
+        return _.flatten(_.pluck(this.sections, 'ingredient_sections'));
       }
     });
     return res;
