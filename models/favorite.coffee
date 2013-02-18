@@ -1,4 +1,4 @@
-app.factory 'Favorite', ($resource, $http, $q) ->
+app.factory 'Favorite', ($resource, $http, $q, Recipe) ->
 
   data = 
     favorites: []
@@ -8,7 +8,7 @@ app.factory 'Favorite', ($resource, $http, $q) ->
 
   $http.get("/api/bookmarks.json").success (res) ->
     data.favorites = res.bookmarks
-    data.recipes = res.recipes
+    data.recipes = _.map res.recipes, (r) -> new Recipe(r)
 
   {
 
