@@ -6,7 +6,7 @@
       scope: {
         recipeToAdd: "=recipe"
       },
-      link: function(scope, element, attrs, ctrl) {
+      link: function(scope, element) {
         return $(element).click(function() {
           var el;
           el = angular.element('.shopping-list-modal');

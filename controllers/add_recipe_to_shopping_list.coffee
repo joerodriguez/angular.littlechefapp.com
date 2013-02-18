@@ -1,4 +1,4 @@
-app.controller 'AddRecipeToShoppingListController', ($scope, ShoppingItem, Recipe) ->
+app.controller 'AddRecipeToShoppingListController', ($scope, ShoppingItem) ->
   @setRecipe = (recipe) ->
     $scope.recipe = recipe
     $scope.items = _.map recipe.ingredients(), (i) ->
