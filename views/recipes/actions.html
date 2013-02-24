@@ -1,0 +1,16 @@
+<button reveal-add-recipe-to-shopping-list recipe="recipe" class="btn">
+  <span class="icon-shopping-cart"></span>
+  <span class="desc hide-for-small">Add to shopping list</span>
+</button>
+
+<button ng-show="isFavorite(recipe)" ng-click="unfavorite(recipe)" class="btn action-bookmark">
+  <span class="icon-star icn"></span>
+  <span class="desc hide-for-small">Remove bookmark</span>
+</button>
+
+<button ng-show="!isFavorite(recipe)" ng-click="favorite(recipe)" class="btn action-bookmark">
+  <span class="icon-star-empty icn"></span>
+  <span class="desc hide-for-small">Add bookmark</span>
+</button>
+
+

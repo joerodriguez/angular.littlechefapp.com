@@ -13,5 +13,8 @@ app.factory 'Recipe', ($resource) ->
     ingredients: ->
       _.flatten _.pluck(@sections, 'ingredient_sections')
 
+    instructions: ->
+      @procedures[0]?.description.split '.'
+
   res
 

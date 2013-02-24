@@ -9,21 +9,7 @@
       <h3>
         <a href="{{recipe.app_url()}}">{{recipe.title}}</a>
       </h3>
-      <button reveal-add-recipe-to-shopping-list recipe="recipe" class="btn">
-        <span class="icon-shopping-cart"></span>
-        <span class="desc hide-for-small">Add to shopping list</span>
-      </button>
-
-      <button ng-show="isFavorite(recipe)" ng-click="unfavorite(recipe)" class="btn action-bookmark">
-        <span class="icon-star icn"></span>
-        <span class="desc hide-for-small">Remove bookmark</span>
-      </button>
-
-      <button ng-show="!isFavorite(recipe)" ng-click="favorite(recipe)" class="btn action-bookmark">
-        <span class="icon-star-empty icn"></span>
-        <span class="desc hide-for-small">Add bookmark</span>
-      </button>
-
+      <div ng-include src="'views/recipes/actions.html'"></div>
     </div>
     <p class="hide-for-small">{{recipe.description}}</p>
   </div>

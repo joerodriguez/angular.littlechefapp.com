@@ -1,1 +1,33 @@
-{{recipe.title}}
+<div class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
+  <section class="title">
+    <h2 itemprop="name">{{recipe.title}}</h2>
+  </section>
+  <section class="description clearfix media">
+    <img alt="184286" class="pull-left food actual " itemprop="image" ng-src="{{recipe.thumb_url()}}">
+    <p itemprop="description">
+      {{recipe.description}}
+    </p>
+    <div ng-include src="'views/recipes/actions.html'"></div>
+  </section>
+  <div class="row">
+    <section class="ingredients six columns">
+      <h3 class="subheader">Ingredients</h3>
+      <ul class="unstyled ingredients">
+        <li itemprop="ingredients" ng-repeat="ingredient in recipe.ingredients()">
+          {{ingredient.name}}
+        </li>
+      </ul>
+    </section>
+    <section class="preparation six columns">
+      <h3 class="subheader">
+        Preparation
+        <small itemprop="cookTime"></small>
+      </h3>
+      <ul class="unstyled procedure" itemprop="recipeInstructions">
+        <li ng-repeat="instruction in recipe.instructions()">
+          <label onmousedown="void(0)">{{instruction | squish}}.</label>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>
