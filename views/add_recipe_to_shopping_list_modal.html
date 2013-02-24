@@ -1,0 +1,16 @@
+<a class="close-reveal-modal">x</a>
+<h3>Add ingredients to my shopping list</h3>
+<form ng-submit="submit()" class="shopping-list-form">
+  <div class="modal-body">
+    {{recipe.title}}
+    <ul class="unstyled">
+      <li ng-repeat="item in items">
+        <label>
+          <input ng-model="item.checked" type="checkbox" />
+          {{item.name}}
+        </label>
+      </li>
+    </ul>
+  </div>
+  <button type="submit" class="button" close-reveal-modal>Add to shopping list</button>
+</form>
