@@ -1,6 +1,6 @@
 app.factory 'Recipe', ($resource) ->
 
-  res = $resource '/api/recipes/:id', {},
+  res = $resource '/api/recipes/:id', { id: '@id' },
     index: { method: 'GET', isArray: true }
 
   _.extend res.prototype,

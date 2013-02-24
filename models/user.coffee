@@ -1,3 +1,2 @@
-class window.User
-  constructor: (attributes) ->
-    _.extend @, attributes
+app.factory 'User', ($resource) ->
+  $resource '/api/users/:id', { id: '@id' }

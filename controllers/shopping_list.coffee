@@ -1,4 +1,4 @@
-window.ShoppingListController = ($scope, $http, ShoppingItem) ->
+app.controller 'ShoppingListController', ($scope, $http, ShoppingItem) ->
 
   ShoppingItem.query (data) ->
     $scope.items = data

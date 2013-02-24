@@ -1,4 +1,2 @@
-class window.Cookbook
-  constructor: (attributes) ->
-    _.extend @, attributes
-
+app.factory 'Cookbook', ($resource) ->
+  $resource '/api/cookbooks/:id', { id: '@id' }

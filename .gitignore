@@ -1,3 +1,4 @@
 controllers/*.js
 models/*.js
 directives/*.js
+littlechef.js

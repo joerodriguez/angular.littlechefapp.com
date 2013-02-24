@@ -1,4 +1,4 @@
-window.ApplicationController = ($scope, $window, Favorite) ->
+app.controller 'ApplicationController', ($scope, $window, Favorite) ->
   $scope.favorite = (recipe) ->
     Favorite.add recipe
 
