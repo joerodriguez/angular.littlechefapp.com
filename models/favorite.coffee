@@ -16,6 +16,7 @@ app.factory 'Favorite', ($resource, $http, $q, Recipe) ->
       data.recipes
 
     is: (recipe) ->
+      return false unless recipe
       _.find data.favorites, (f) -> f.recipe_id == recipe.id
 
     remove: (recipe) ->
