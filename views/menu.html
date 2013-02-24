@@ -30,12 +30,6 @@
         </ul>
 
         <ul class="right">
-          <li ng-show="user">
-            <a href="#/account" class="account-link">
-              <img alt="N575683589_1343598_1804_normal" class="account-image" ng-src="{{user.picture}}">
-              <span>{{user.login}}</span>
-            </a>
-          </li>
           <li class="search">
             <form ng-submit="search(query)" class="form-search navbar-search pull-right lc-search" method="get">
               <input ng-change="search(query)" class="search-query" ng-model="query" placeholder="Find Recipes" type="search">
