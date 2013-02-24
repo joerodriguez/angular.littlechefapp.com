@@ -12,5 +12,3 @@ app.controller 'AddRecipeToShoppingListController', ($scope, ShoppingItem) ->
     _.each items_to_add, (item) ->
       c = new ShoppingItem name: item.name, recipe_id: $scope.recipe.id
       c.$save()
-      
-      

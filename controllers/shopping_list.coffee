@@ -11,7 +11,8 @@ window.ShoppingListController = ($scope, $http, ShoppingItem) ->
     $scope.newItemName = ''
 
   $scope.removeAll = ->
-    console.log "remove all"
+    _.each $scope.items, (i) -> i.$delete id: i.id
+    $scope.items = []
 
   $scope.removeSelected = ->
     res = _.groupBy $scope.items, (i) -> !!i.checked
