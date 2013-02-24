@@ -1,0 +1,3 @@
+controllers/*.js
+models/*.js
+directives/*.js
