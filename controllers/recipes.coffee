@@ -1,4 +1,4 @@
-app.controller 'RecipesListController', ($scope, $http, Recipe) ->
+app.controller 'PopularRecipesController', ($scope, $http, Recipe) ->
   $http.get("/api/feeds/show.json").success (data) ->
     $scope.recipes = _.map data, (d) -> new Recipe(d)
 

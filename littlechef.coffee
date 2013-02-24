@@ -7,7 +7,7 @@ window.app = angular.module("littlechef", ['ngResource']).config ($routeProvider
     controller: 'RecipeDetailController'
   ).when("/popular",
     templateUrl: "views/recipes/popular.html"
-    controller: 'RecipesListController'
+    controller: 'PopularRecipesController'
   ).when("/shopping-list",
     templateUrl: "views/shopping_list.html"
     controller: 'ShoppingListController'

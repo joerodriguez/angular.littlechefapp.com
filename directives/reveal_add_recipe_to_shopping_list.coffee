@@ -6,4 +6,4 @@ app.directive 'revealAddRecipeToShoppingList', () ->
       el = angular.element '.shopping-list-modal'
       el.controller().setRecipe scope.recipeToAdd
       el.reveal()
-  
+
