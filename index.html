@@ -33,7 +33,7 @@
 
   <body ng-controller="ApplicationController" style="padding-top: 45px;">
 
-    <div class="row" ng-controller="MenuController" ng-include src="'views/menu.html'">
+    <div class="row" ng-include src="'views/menu.html'">
     </div>
 
     <div class="row">
@@ -44,5 +44,6 @@
     <div ng-controller="AddRecipeToShoppingListController" class="reveal-modal large shopping-list-modal" ng-include src="'views/add_recipe_to_shopping_list_modal.html'">
     </div>
 
+    <ng-include src="'views/authorization.html'" />
   </body>
 </html>
