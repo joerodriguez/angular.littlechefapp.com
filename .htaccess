@@ -1,6 +1,0 @@
-php_flag engine off
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^api/(.*)$ http://www.littlechefapp.com/$1 [P]
-</IfModule>
