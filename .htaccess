@@ -1,4 +1,4 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^api/(.*)$ http://littlechefapp.com:3000/$1 [P]
+    RewriteRule ^api/(.*)$ http://www.littlechefapp.com/$1 [P]
 </IfModule>

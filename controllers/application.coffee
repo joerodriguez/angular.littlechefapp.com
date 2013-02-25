@@ -1,4 +1,4 @@
-app.controller 'ApplicationController', ($scope, $window, Favorite) ->
+app.controller 'ApplicationController', ($scope, $window, Favorite, User) ->
   $scope.favorite = (recipe) ->
     Favorite.add recipe
 
@@ -10,3 +10,6 @@ app.controller 'ApplicationController', ($scope, $window, Favorite) ->
 
   $scope.search = (q) ->
     $window.location.hash = "#/search?q=#{q}"
+
+  $scope.user = ->
+    User.current()

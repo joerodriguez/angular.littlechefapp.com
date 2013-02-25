@@ -3,17 +3,17 @@
     <nav class="top-bar">
       <ul>
         <li class="name">
-        <h1><a href="/" class="brand">little chef</a></h1>
+        <h1><a href="#/popular" class="brand">little chef</a></h1>
         </li>
         <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
 
       <section>
-        <ul class="left" ng-show="!user">
-          <li><a href="#" class="action-login" data-no-turbolink="true">Login</a></li>
+        <ul class="left" ng-show="!user()">
+          <li><a href="#" authorized data-no-turbolink="true">Login</a></li>
         </ul>
 
-        <ul class="left" ng-show="user">
+        <ul class="left" ng-show="user()">
           <li><a href="#/favorites">Favorites</a></li>
           <li><a href="#/shopping-list">Shopping List</a></li>
           <li class="has-dropdown" ng-show="user.admin">
@@ -30,6 +30,11 @@
         </ul>
 
         <ul class="right">
+          <li ng-show="user()">
+            <a href="http://www.littlechefapp.com/logout">
+              Logout
+            </a>
+          </li>
           <li class="search">
             <form ng-submit="search(query)" class="form-search navbar-search pull-right lc-search" method="get">
               <input ng-change="search(query)" class="search-query" ng-model="query" placeholder="Find Recipes" type="search">
