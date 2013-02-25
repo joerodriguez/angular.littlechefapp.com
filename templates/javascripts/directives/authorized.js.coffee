@@ -5,4 +5,5 @@ app.directive 'authorized', (User) ->
         el = angular.element '.authorization-modal'
         el.reveal()
         evt.stopImmediatePropagation()
+        evt.preventDefault()
 
