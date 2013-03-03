@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="littlechef">
   <head>
-    <link href="http://www.littlechefapp.com/assets/application.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css">
 
     <script src="/javascripts/lib/jquery-min.js"></script>
     <script src="/javascripts/lib/foundation-min.js"></script>
@@ -40,9 +40,7 @@
       </div>
     </div>
 
-    <div ng-controller="AddRecipeToShoppingListController" class="reveal-modal large shopping-list-modal" ng-include src="'views/add_recipe_to_shopping_list_modal.html'">
-    </div>
-
-    <ng-include src="'views/authorization.html'" />
+    <ng-include src="'views/add_recipe_to_shopping_list_modal.html'" /></ng-include>
+    <ng-include src="'views/authorization.html'"></ng-include>
   </body>
 </html>
