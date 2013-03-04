@@ -21,7 +21,7 @@
     <section class="preparation six columns">
       <h3 class="subheader">
         Preparation
-        <small itemprop="cookTime"></small>
+        <small itemprop="cookTime">{{recipe.preparation_time}}</small>
       </h3>
       <ul class="unstyled procedure" itemprop="recipeInstructions">
         <li ng-repeat="instruction in recipe.instructions()">

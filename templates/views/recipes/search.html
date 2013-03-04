@@ -2,6 +2,4 @@
   {{query}} recipes
   <small>{{total}}</small>
 </h1>
-<ul>
-  <li ng-repeat="recipe in recipes" ng-include src="'views/recipes/recipe.html'"> </li>
-</ul>
+<ng-include src="'views/recipes/list'" />

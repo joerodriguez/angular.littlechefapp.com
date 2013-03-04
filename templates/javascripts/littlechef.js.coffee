@@ -1,4 +1,4 @@
-window.app = angular.module("littlechef", ['ngResource']).config ($routeProvider) ->
+window.app = angular.module("littlechef", ['ngResource', 'infinite-scroll']).config ($routeProvider) ->
   $routeProvider.when("/account",
     templateUrl: "views/account.html"
     controller: 'AccountController'
