@@ -2,4 +2,6 @@
   {{query}} recipes
   <small>{{total}}</small>
 </h1>
-<ng-include src="'views/recipes/list'" />
+<ul infinite-scroll="loadMore()">
+  <li ng-repeat="recipe in recipes" ng-include src="'views/recipes/recipe_list_item.html'"> </li>
+</ul>
