@@ -1,8 +1,5 @@
 window.app = angular.module("littlechef", ['ngResource', 'infinite-scroll']).config ($routeProvider) ->
-  $routeProvider.when("/account",
-    templateUrl: "views/account.html"
-    controller: 'AccountController'
-  ).when("/recipes/:recipeId",
+  $routeProvider.when("/recipes/:recipeId",
     templateUrl: "views/recipes/detail.html"
     controller: 'RecipeDetailController'
   ).when("/popular",

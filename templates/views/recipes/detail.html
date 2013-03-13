@@ -25,7 +25,7 @@
       </h3>
       <ul class="unstyled procedure" itemprop="recipeInstructions">
         <li ng-repeat="instruction in recipe.instructions()">
-          <label onmousedown="void(0)">{{instruction | squish}}.</label>
+          <label onmousedown="void(0)" ng-class="{'procedure-done': ($index+1)<=progress_step}" ng-click="setProgress($index+1)">{{instruction | squish}}.</label>
         </li>
       </ul>
     </section>
